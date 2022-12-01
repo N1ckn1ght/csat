@@ -31,9 +31,8 @@ function Poly:getDot(index)
     if (self.vertices[first] ~= nil and self.vertices[second] ~= nil) then
         local x = self.vertices[index * 2 - 1]
         local y = self.vertices[index * 2]
-        -- values of angle are negative since it's a CLOCKWISE rotation
-        local xReal = x * math.cos(-self.angle) - y * math.sin(-self.angle)
-        local yReal = x * math.sin(-self.angle) + y * math.cos(-self.angle)
+        local xReal = x * math.cos(self.angle) - y * math.sin(self.angle)
+        local yReal = x * math.sin(self.angle) + y * math.cos(self.angle)
         return Vector:create(xReal + self.x, yReal + self.y)
     else
         return nil

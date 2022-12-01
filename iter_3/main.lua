@@ -21,15 +21,19 @@ end
 function love.keypressed(key)
     if key == "q" then
         Poly1.angle = Poly1.angle - math.pi / 60
+        collide(Poly1, Poly2)
     end
     if key == "e" then
         Poly1.angle = Poly1.angle + math.pi / 60
+        collide(Poly1, Poly2)
     end
     if key == "a" then
         Poly2.angle = Poly2.angle - math.pi / 60
+        collide(Poly1, Poly2)
     end
     if key == "d" then
         Poly2.angle = Poly2.angle + math.pi / 60
+        collide(Poly1, Poly2)
     end
 end
 

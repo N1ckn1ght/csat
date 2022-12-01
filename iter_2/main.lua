@@ -46,8 +46,7 @@ function collide(Poly1, Poly2)
     local projA = dotProduct(A, axis)
     local projB = dotProduct(B, axis)
     
-    -- projB is expected to be a negative number, however in current case dotProduct function will always return a positive number
-    local gap = projC - projA - projB
+    local gap = projC - projA + projB
     if (gap > 0) then
         print("No collision.")
     else
