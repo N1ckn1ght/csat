@@ -52,11 +52,9 @@ function collide(poly1, poly2)
     local np1 = poly1:getNormals()
     local np2 = poly2:getNormals()
     for _, np in pairs({np1, np2}) do
-        print("->Next great cycle")
         for _, v in pairs(np) do
             local p = poly1:getMinMaxProj(v)
             local q = poly2:getMinMaxProj(v)
-            print("  ->next smol cycle", v, p[1], p[2], q[1], q[2])
             if ((p[2] < q[1]) or (q[2] < p[1])) then
                 print("No collision.")
                 return
