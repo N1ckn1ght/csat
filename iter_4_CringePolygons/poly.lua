@@ -29,8 +29,8 @@ function Poly:getDot(index)
     local first = index * 2 - 1
     local second = index * 2
     if (self.vertices[first] ~= nil and self.vertices[second] ~= nil) then
-        local x = self.vertices[index * 2 - 1]
-        local y = self.vertices[index * 2]
+        local x = self.vertices[first]
+        local y = self.vertices[second]
         local xReal = x * math.cos(self.angle) - y * math.sin(self.angle)
         local yReal = x * math.sin(self.angle) + y * math.cos(self.angle)
         return Vector:create(xReal + self.x, yReal + self.y)
